@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{401C1F1F-75CD-4859-8C7D-ED391AC3419D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndiaTango</RootNamespace>
+    <AssemblyName>B3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\rwlamont\Documents\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG; </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE; </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ECA6A27F76E8B7549946AA147C49B7DA2D6D766E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>IndiaTango_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\..\Externals\Caliburn Micro\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\Externals\DotNetZipLib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\Externals\protobuf-net\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\Externals\Caliburn Micro\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Visiblox.Charts">
+      <HintPath>..\..\Externals\Visiblox\Visiblox.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\..\Externals\Extended WPF Toolkit\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Effects\HeatColorizer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeatColorizer.fx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AboveMaxValueDetector.cs" />
+    <Compile Include="Models\BelowMinValueDetector.cs" />
+    <Compile Include="Models\Calibration.cs" />
+    <Compile Include="Models\CalibrationAnnotatorBehaviour.cs" />
+    <Compile Include="Models\CellForegroundConverter.cs" />
+    <Compile Include="Models\ChangeReason.cs" />
+    <Compile Include="Models\ChangesAnnotatorBehaviour.cs" />
+    <Compile Include="Models\AbrevsHelper.cs" />
+    <Compile Include="Models\Colour.cs" />
+    <Compile Include="Models\ColourConverter.cs" />
+    <Compile Include="Models\CountriesHelper.cs" />
+    <Compile Include="Models\CustomDataGrid.cs" />
+    <Compile Include="Models\CustomSortDataGrid.cs" />
+    <Compile Include="Models\CustomTabItem.cs" />
+    <Compile Include="Models\DataGridHelper.cs" />
+    <Compile Include="Models\DateAnnotationBehaviour.cs" />
+    <Compile Include="Models\DensitySeries.cs" />
+    <Compile Include="Models\DescriptionHelper.cs" />
+    <Compile Include="Models\EditableComboBox.cs" />
+    <Compile Include="Models\ErroneousValue.cs" />
+    <Compile Include="Models\FormattedDateTime.cs" />
+    <Compile Include="Models\IDetectionMethod.cs" />
+    <Compile Include="Models\FormulaEvaluator.cs" />
+    <Compile Include="Models\CustomSelectionBehaviour.cs" />
+    <Compile Include="Models\DatasetExporter.cs" />
+    <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\CSVReader.cs" />
+    <Compile Include="Models\GraphableSensor.cs" />
+    <Compile Include="Models\CustomZoomBehaviour.cs" />
+    <Compile Include="Models\GraphBackgroundBehaviour.cs" />
+    <Compile Include="Models\InputBindingTrigger.cs" />
+    <Compile Include="Models\FloatStringConverter.cs" />
+    <Compile Include="Models\IntStringConverter.cs" />
+    <Compile Include="Models\LakeAnalysis.cs" />
+    <Compile Include="Models\LINQExtensions.cs" />
+    <Compile Include="Models\ListedSensor.cs" />
+    <Compile Include="Models\ManufacturerHelper.cs" />
+    <Compile Include="Models\MetaFileReader.cs" />
+    <Compile Include="Models\MetalimnionBoundariesDetails.cs" />
+    <Compile Include="Models\MinMaxDetector.cs" />
+    <Compile Include="Models\MissingValuesDetector.cs" />
+    <Compile Include="Models\NamedBitmap.cs" />
+    <Compile Include="Models\OwnerHelper.cs" />
+    <Compile Include="Models\PreviousZoomHelper.cs" />
+    <Compile Include="Models\RepeatedValuesDetector.cs" />
+    <Compile Include="Models\RunningMeanStandardDeviationDetector.cs" />
+    <Compile Include="Models\SensorMetaData.cs" />
+    <Compile Include="Models\SensorNameEqualityComparer.cs" />
+    <Compile Include="Models\SensorStateListObject.cs" />
+    <Compile Include="Models\SensorTemplate.cs" />
+    <Compile Include="Models\SensorVariable.cs" />
+    <Compile Include="Models\SensorVocabulary.cs" />
+    <Compile Include="Models\ThermoclineDepthDetails.cs" />
+    <Compile Include="Models\TimeSpanStringConverter.cs" />
+    <Compile Include="Models\ToHighRateOfChangeDetector.cs" />
+    <Compile Include="Models\Tools.cs" />
+    <Compile Include="Models\UnitsHelper.cs" />
+    <Compile Include="Models\UserHelper.cs" />
+    <Compile Include="Models\YearlyDataBlock.cs" />
+    <Compile Include="MultiSeriesBinding\MultiSeries.cs" />
+    <Compile Include="SimpleContainer.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ContactEditorViewModel.cs" />
+    <Compile Include="ViewModels\EditSensorViewModel.cs" />
+    <Compile Include="ViewModels\EditSiteDataViewModel.cs" />
+    <Compile Include="ViewModels\ExportToImageViewModel.cs" />
+    <Compile Include="ViewModels\ExportViewModel.cs" />
+    <Compile Include="ViewModels\LoadInDataMetaViewModel.cs" />
+    <Compile Include="ViewModels\LogWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MatchToExistingSensorsViewModel.cs" />
+    <Compile Include="ViewModels\SensorTemplateManagerViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\SpecifyValueViewModel.cs" />
+    <Compile Include="ViewModels\UseSelectedRangeViewModel.cs" />
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationDetailsView.xaml.cs">
+      <DependentUpon>CalibrationDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactEditorView.xaml.cs">
+      <DependentUpon>ContactEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSiteDataView.xaml.cs">
+      <DependentUpon>EditSiteDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExportToImageView.xaml.cs">
+      <DependentUpon>ExportToImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExportView.xaml.cs">
+      <DependentUpon>ExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSensorView.xaml.cs">
+      <DependentUpon>EditSensorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadInDataMetaView.xaml.cs">
+      <DependentUpon>LoadInDataMetaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogWindowView.xaml.cs">
+      <DependentUpon>LogWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchToExistingSensorsView.xaml.cs">
+      <DependentUpon>MatchToExistingSensorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SensorTemplateManagerView.xaml.cs">
+      <DependentUpon>SensorTemplateManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecifyValueView.xaml.cs">
+      <DependentUpon>SpecifyValueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UseSelectedRangeView.xaml.cs">
+      <DependentUpon>UseSelectedRangeView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Dataset.cs" />
+    <Compile Include="Models\DataStringReader.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventLogger.cs" />
+    <Compile Include="Models\GPSCoords.cs" />
+    <Compile Include="Models\IDataReader.cs" />
+    <Compile Include="Models\Sensor.cs" />
+    <Compile Include="Models\SensorState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Effects\HeatColorizer.fx">
+      <Generator>ShaderEffectGenerator</Generator>
+      <LastGenOutput>HeatColorizer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Effects\HeatColorizer.ps">
+      <DependentUpon>HeatColorizer.fx</DependentUpon>
+    </Resource>
+    <None Include="IndiaTango_TemporaryKey.pfx" />
+    <None Include="Resources\GLEON_VOCABULARY.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\IndiaTango.exe.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditSiteDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExportToImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSensorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoadInDataMetaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MatchToExistingSensorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SensorTemplateManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecifyValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UseSelectedRangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add_data.png" />
+    <Resource Include="Images\B3_icon.png" />
+    <Resource Include="Images\cancel_32.png" />
+    <Resource Include="Images\done_64.png" />
+    <Resource Include="Images\done_32.png" />
+    <Resource Include="Images\edit_points.png" />
+    <Resource Include="Images\expand_left.png" />
+    <Resource Include="Images\expand_right.png" />
+    <Resource Include="Images\export_data.png" />
+    <Resource Include="Images\export_graph.png" />
+    <Resource Include="Images\find_missing.png" />
+    <Resource Include="Images\find_range.png" />
+    <Resource Include="Images\graph.png" />
+    <Resource Include="Images\graph_specify.png" />
+    <Resource Include="Images\graph_zero.png" />
+    <Resource Include="Images\new.png" />
+    <Resource Include="Images\new_site.png" />
+    <Resource Include="Images\open.png" />
+    <Resource Include="Images\open2.png" />
+    <Resource Include="Images\open3.png" />
+    <Resource Include="Images\redo.png" />
+    <Resource Include="Images\delete_32.png" />
+    <Resource Include="Images\edit_32.png" />
+    <Resource Include="Images\undo.png" />
+    <Resource Include="Images\zoom_in.png" />
+    <Resource Include="Images\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\new_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete_16.png" />
+    <Resource Include="Images\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save_32.png" />
+    <Resource Include="Images\save_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tip_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\calibrate_sensor.png" />
+    <Resource Include="Images\new_sensor.png" />
+    <Resource Include="Images\remove_point.png" />
+    <Resource Include="Images\sensor_preset.png" />
+    <Resource Include="Images\site_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\error_32.png" />
+    <Resource Include="Images\help_32.png" />
+    <EmbeddedResource Include="Images\info_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warning_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\units.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\warning_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settings_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\log_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sensor_32.png" />
+    <Resource Include="Images\sensor_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\redo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\export_graph_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\left_32.png" />
+    <Resource Include="Images\right_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wizard_fistpump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sensor_preset_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\graph_interpolate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\preview_32.png" />
+    <Resource Include="Images\preview_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultreasons.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

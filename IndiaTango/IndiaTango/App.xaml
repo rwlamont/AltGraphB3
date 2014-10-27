@@ -1,0 +1,17 @@
+﻿<Application x:Class="IndiaTango.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:IndiaTango">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:IndiaTangoBootstrapper x:Key="bootstrapper" />
+                    <Style x:Key="HiddenTabHeaders" TargetType="{x:Type TabItem}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
